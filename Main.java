@@ -8,6 +8,6 @@ public class Main {
       bst.insert("A");
 
       bst.print();
-
+      System.out.println(bst.size());
    }
 }

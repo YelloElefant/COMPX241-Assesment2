@@ -129,7 +129,7 @@ public class StrBST {
          return;
       print(x.left);
       System.out.println(x.key + "| left: " + (x.left == null ? "null" : x.left.key) + "\t| right: "
-            + (x.right == null ? "null" : x.right.key));
+            + (x.right == null ? "null" : x.right.key) + "\t| N: " + x.N);
       print(x.right);
    }
 }
