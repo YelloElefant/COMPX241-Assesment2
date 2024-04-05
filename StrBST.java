@@ -64,6 +64,8 @@ public class StrBST {
       root = delete(root, key);
    }
 
+   // deletes a specific node and moves the left most of the right sub-tree to the
+   // deleted node
    private Node delete(Node x, String key) {
       if (x == null)
          return null;
@@ -86,10 +88,7 @@ public class StrBST {
       return x;
    }
 
-   public void removeMin() {
-      root = deleteMin(root);
-   }
-
+   // deletes the left most of a tree
    private Node deleteMin(Node x) {
       if (x.left == null)
          return x.right;
@@ -98,6 +97,7 @@ public class StrBST {
       return x;
    }
 
+   // gets the left most of a tree
    public String min() {
       return min(root).key;
    }
@@ -108,6 +108,7 @@ public class StrBST {
       return min(x.left);
    }
 
+   // gets the right most of a tree
    public String max() {
       return max(root).key;
    }
@@ -116,50 +117,6 @@ public class StrBST {
       if (x.right == null)
          return x;
       return max(x.right);
-   }
-
-   public String floor(String key) {
-      Node x = floor(root, key);
-      if (x == null)
-         return null;
-      return x.key;
-   }
-
-   private Node floor(Node x, String key) {
-      if (x == null)
-         return null;
-      int cmp = key.compareTo(x.key);
-      if (cmp == 0)
-         return x;
-      if (cmp < 0)
-         return floor(x.left, key);
-      Node t = floor(x.right, key);
-      if (t != null)
-         return t;
-      else
-         return x;
-   }
-
-   public String ceiling(String key) {
-      Node x = ceiling(root, key);
-      if (x == null)
-         return null;
-      return x.key;
-   }
-
-   private Node ceiling(Node x, String key) {
-      if (x == null)
-         return null;
-      int cmp = key.compareTo(x.key);
-      if (cmp == 0)
-         return x;
-      if (cmp > 0)
-         return ceiling(x.right, key);
-      Node t = ceiling(x.left, key);
-      if (t != null)
-         return t;
-      else
-         return x;
    }
 
    // make in-order traversal method for print
