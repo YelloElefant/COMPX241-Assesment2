@@ -135,4 +135,21 @@ public class DictionaryBST {
             + (x.right == null ? "null" : x.right.value) + "\t| N: " + x.N);
       print(x.right);
    }
+
+   // method that prints a specific DictionaryNode
+   public void printDictionaryItem(String value) {
+      printDictionaryItem(root, value);
+   }
+
+   private void printDictionaryItem(DictionaryNode x, String value) {
+      if (x == null)
+         return;
+      int cmp = value.compareTo(x.value);
+      if (cmp < 0)
+         printDictionaryItem(x.left, value);
+      else if (cmp > 0)
+         printDictionaryItem(x.right, value);
+      else
+         System.out.println(x.value + " : " + x.definition);
+   }
 }

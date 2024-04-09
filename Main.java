@@ -1,13 +1,10 @@
 public class Main {
    public static void main(String[] args) {
-      StrBST bst = new StrBST();
-      bst.insert("E");
-      bst.insert("B");
-      bst.insert("D");
-      bst.insert("C");
-      bst.insert("A");
+      DictionaryBST bst = new DictionaryBST();
+      bst.insert("a", "1");
+      bst.insert("b", "2");
 
-      bst.print();
-      System.out.println(bst.size());
+      bst.printDictionaryItem("a"); // true
+
    }
 }
