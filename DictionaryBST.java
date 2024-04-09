@@ -152,4 +152,17 @@ public class DictionaryBST {
       else
          System.out.println(x.value + " : " + x.definition);
    }
+
+   // printDictionary method that prints all the nodes and there definitions
+   public void printDictionary() {
+      printDictionary(root);
+   }
+
+   private void printDictionary(DictionaryNode x) {
+      if (x == null)
+         return;
+      printDictionary(x.left);
+      System.out.println(x.value + " : " + x.definition);
+      printDictionary(x.right);
+   }
 }

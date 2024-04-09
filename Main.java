@@ -4,7 +4,7 @@ public class Main {
       bst.insert("a", "1");
       bst.insert("b", "2");
 
-      bst.printDictionaryItem("a"); // true
+      bst.printDictionary(); // true
 
    }
 }
