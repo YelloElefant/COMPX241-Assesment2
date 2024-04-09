@@ -1,0 +1,352 @@
+ASCII: Pronounced ass-key. Stands for the American Standard Code for Information Interchange. It is a 7bit code for characters. For example; the letter 'x' is represented as 1111000. Because it is only 7 bits long, an ASCII character can be stored in a byte.
+
+Abstraction: Removing detail of something to focus on a subset of the features without confusing details.
+
+Address: a) A location in memory or identifying a particular piece of memory. b) An identification that allows access to something such as an internet address which allows one to access a device on the internet.
+
+Algorithm: A set of instructions for accomplishing a task that when executed will terminate.
+
+Analog: Measured in continuous values. The audio signal from a microphone is analog. A clock with hands is considered analog.
+
+Application: A runnable program that provides some service.
+
+Argument: One of the pieces of data provided as input to a procedure or function through the call to the procedure or function.
+
+Artificial Intelligence: The subfield of computer science that involves the creation of programs that attempt to do what was formerly believed to only be able to be done by humans.
+
+Assignment: This stores a value in a variable. An assignment statement has an assignment in it describing the storage of values in variables.
+
+Autonomous: Controlled by computer programs and not people.
+
+Bandwidth: Refers to the volume of information that can be transmitted or processed. It is usually measured in bits or bytes per time unit like "bits per second".
+
+Big Data: The problem beginning in the 21st century of processing vast amounts of data coming at or refreshing at very high speed. For example satellite sensor data, city monitoring sensors, gene sequencing data, etc.
+
+Binary: The base 2 number system. Integer can be encoded as binary which is a string of 0's and 1's. Binary is a place-value system in which each bit position denotes a power of 2 (unlike decimal which uses 10 symbols and powers of 10). k bits of information can represent 2k different numbers. For example counting in 3 bits of binary you can count from 0 to 7; 000, 001, 010, 011, 100, 101, 110, 111.
+
+Bit: A binary digit. The smallest unit of information represented by one of two states (usually 0 or 1). It is often denoted by a lower case 'b' as in Mbs (mega-bits per second). Or the amount of information gained when answering a yes or no question.
+
+Block: A collection of statements that can be grouped together to be treated as one statement. For instance in C and Processing statements inside parentheses are treated as one statement that is either executed together or not. Generally the only "entry" into a block of code is at the top of the code.
+
+Boolean: A type in many programming languages that can hold either a True or a False. The name comes from the mathematician George Boole. It can also refer to the type of expression for example the type of the expression x > 6 is Boolean.
+
+Boot Program: The program run when the computer hardware is powered up.
+
+Boot: To restart a computer as if the computer had been powered down regardless of whether it was on and running or not.
+
+Broadcast: In messaging passing it is to send the same message to all who can listen as opposed to peer-to-peer communication for instance.
+
+Bus: a) the main path for bits traveling in parallel in and out of a CPU or between major computational, storage, and device components. It is often many bits wide. b) Any pathway for bits to travel in parallel.
+
+Byte: 8 bits. It is often denoted by a capital B as in MB (mega-bytes).
+
+Call: A statement in a language that starts or invokes a procedure or function.
+
+CPU: Central Processing Unit. Where the computer instructions are executed. It usually refers to the general purpose processor that handles a range of processing tasks.
+
+CPU intensive: A program that spends most of its time running on the CPU with a disproportionately small amount of time waiting for data from memory.
+
+Cache: Is memory used to speed memory access, that stores data that is anticipated to be used next or was just used and may be used again. For example; cache may exist on slow physically rotating discs to save information of data that is near to the data just accessed or to hold data without writing it to disc until it is likely not to change again.
+
+Card: A circuit board which can be plugged into your computer motherboard.
+
+Central Processing Unit: Processing unit that takes streams of bits as data and instructions and executes the instructions on the data yielding more data and possibly instructions.
+
+Character: A single letter or symbol that is represented by a small set of bytes in the computer. See ASCII and Unicode.
+
+Chip: A integrated electronic circuit generally with from thousands to billions of components such as transistors and capacitors that perform complex functionality such as addressable memory, CPU, I/O functions.
+
+Clock: The internal "drummer" or heartbeat that keeps the CPU activities across the chip and across the motherboard in sync. Often measured in megahertz or gigahertz.
+
+Cloud Computing: Rather than computation occurring "locally" on one's own computer, the computation is on distant machines accessible via the internet.
+
+Cloud Storage: Rather than the information being stored "locally" on one's own computer, the information is stored on distant machines accessible via the internet.
+
+Cloud: a) In the phrase "in the cloud" refers to information being stored not on one's own computer but on a distant mass storage device accessible via the internet. b) Computing that is done not on one's own computer but on computers accessed via the internet.
+
+Cluster Computer: Also known as a cluster is a supercomputer made up of many smaller computers such as PCs connected with very fast network hardware.
+
+Comment: Comments are important in programs as they are nonexecuting code that explains to a reader of the code in plain text what is going on
+
+Comparison: This is an operation that compares things like if the values in two variables are equal. In processing the equals comparison is done with the double equals; ==. In NetLogo it is done with a single equals; =. Other comparisons are things like not equal and greater than.
+
+Compile Time: During the time that a program is being compiled.
+
+Compiler: A program for translating a program written in one language into code that can be executed. 
+
+Computer science: a) the study of process, data and computation. b) A very cool profession. (No bias here. ;-) ).
+
+Computer: An electronic device for storing and processing information based on programs stored in the computer.
+
+Conditional: A control structure such as an if-statement or case-statement that conditionally executes a block of code
+
+Control structure: Code or statement that changes the order of execution for instance an if-statement conditionally executes code while a loop may perform a section of code repeatedly.
+
+Core: A sub-processor on a chip. Usually used when there are more than one processor on a single chip. Modern CPU chips often have several cores.
+
+Data Abstraction: Giving a name to a complex set of data that forms a single concept thereby removing the need to always refer to all the detail. To hide the details of data by referring to the whole rather than the parts. For example a complex data structure may be necessary to describe all the details of a car but could collectively be referred to as simply the car type. All the data of the car could for instance be created, copied, sorted, deleted without mentioning all the component parts.
+
+Data Mining: Using algorithms to infer complex results for masses of data such as sensor data or the world's web pages. Generally to be data mining most of the data available is not relevant but large enough amounts are that it is nontrivial to draw conclusions.
+
+Data intensive: A program that spends most of its time waiting for data from memory rather than computing. Sometimes called memory intensive.
+
+Database: An organized collection of data and services to access them in a variety of ways relevant to the data. 
+
+Declaration: A statement in a program that attaches a property to a symbol. For example in Processing you might say; "float x" which means that the variable x has the property that it is a floating point number. In processing you have to declare variables giving them a type before you use them.
+
+Device: A unit or piece of hardware with a specific purpose such as a disk, keyboard, audio board, etc.
+
+Digital Divide: The societal advantages for those with internet or computer access over those who do not have access or have limited access
+
+Digital: Measured in a set of discrete steps. The audio signal on a CD or in an mp4 file is digital. cf. Analog.
+
+Disk: A magnetic storage device that records data on a spinning disk. The bulk of long term storage on a today's computers is "on the disk". The main file system is usually found here. Compare with the term SSD
+
+Drone: An unmanned flying vehicle (See UAV). May be remote controlled or autonomous.
+
+Embedded: A computer is said to be embedded if it is integrated into the function of a physical item. The computers in a car are embedded in the car. One speaks of embedded systems.
+
+Encryption: To use a code to render data unintelligible. An encryption key is data that when supplied to an encryption program and the original data to be encrypted yields the encrypted data. A decryption key when supplied with a decryption program and encrypted data the recovers the original data. Many times these two keys are the same.
+
+Executable: A file that can be executed by the operating system.
+
+Expression: Is a language construct that can be used to produce a value. For example sqrt(3) or 4+7*88.
+
+External hard drive: A disk that is a peripheral.
+
+File Extension: when naming a file there is often a part after the last period in the file name called the file extension that indicates the type of the file such as pdf, jpg, txt, etc.
+
+File: a single block of information allocated by an operating system for retention beyond the execution time of any program.
+
+File System: A formatting of memory such as a disk by the Operating System to organize that memory into a hierarchy of directories and files. It can mean the format standard or the formatted memory.
+
+Flag: A term used in reference to a Boolean variable used to answer a true or false question. For example; the variable errorFlg is used in the program to indicate if an error has been found. Often flag variables are used as a parameter to control some aspect of a function or program. For example; the variable noOutput is used to control if the program is to produce any visible output or not.
+
+Floating Point Number: A number with a decimal in it like 3.141592653589.
+
+Front-side Bus: It is a connection between the CPU and fast components of your computer like RAM and GPU (See the term Bus). Technically it is a term for a specific Intel transport mechanism but can be used in this general way
+
+Function: A standalone segment of code with a clear set of inputs and output that performs a specific function and returns a value. It is essentially a procedure that returns a value.
+
+Giga-: A prefix for a billion, as in a gigabyte or gigahertz or gigabananas (billion bananas).
+
+Global variable: A variable that is accessible from anywhere in the code. It is also persistent for the duration of the program.
+
+GPU: Graphics Processing Unit. It is a CPU that processes instructions specifically targeted at graphics processing. It is highly parallel with hundreds to thousands of simple cores.
+
+Grammar: The formal specification of the syntax of a language
+
+Graphics card: Is a circuit board containing a CPU that processes instructions specifically targeted at graphics processing. This is especially useful for games and simulation programming.
+
+HSB or HSV: Stands for "Hue, Saturation, Brightness or Value". It is a way of specifying a color by giving the amount of each of three contributing factors to make the color; Hue is the color in the color wheel, Saturation is the amount of color versus white, Value is how bright the color is or distance from black.
+
+HTML: Hypertext Markup Language. A language used to write internet based documents that can refer to each other.
+
+Hard drive: Same as disk.
+
+Hardware: Physical components of a computer or related equipment.
+
+Hertz: A cycle or oscillation per second. A second hand on a standard analog clock ticks at 1 hertz. The clock on most computers is currently on the order of 1 gigahertz.
+
+Hexadecimal: The base 16 number system (compare with binary). It is often used to express binary numbers in shorter strings than binary or octal. Counting to 20 using two hex symbols; 01, 02, 03, 04, 05, 06, 07, 08, 09, 0a, 0b, 0c, 0d, 0e, 0f, 10, 11, 12, 13, 14.
+
+Hex: Short for Hexadecimal.
+
+High Level Language: A language that is NOT similar to the one that runs on the hardware and deals more complex data types and control structures than the hardware. Languages like Java, C, C++, Python...
+
+I/O: Input and output.
+
+IDE: Integrated Development Environment. A software tool to help you write software. Examples include the open source IntelliJ and the proprietary Microsoft Visual Studio.
+
+Indenting: Indenting is a MUST in your program. Indenting shows the reader what is the intended nesting of the code. Indenting is a critical tool in debugging. Always, always indent!!
+
+Instruction: a) A single executable action for the CPU b) the binary encoded form for the instruction.
+
+Integer: A whole number, that is, with no fractional part. May be positive, negative, or zero.
+
+Interface: The formal way in which two things interact. In particular how humans and machines interact or two pieces of software interact.
+
+Internet: A network of computers, routers, and other networks interconnected with a specific network communications protocol (TCP/IP).
+
+Interpreter: A combination of a compiler and runtime environment that translates and executes a program in one step.
+
+IOT: Internet of Things. Physical objects with embedded computers that represent the object on the internet. For example, a washing machine may be on the internet allowing an owner to "start the wash" remotely. Around 2021 the number of IOT devices exceeded the number of people and continues to grow.
+
+IT: Information Technology. This refers to general hardware, OS, and network design and support.
+
+Keyword: A reserved word in the language that has special meaning in the language and cannot be appropriated for other purposes. For example "for" in Processing or C++.
+
+Kilo-: A prefix for a thousand, as in a kilobyte.
+
+Kilobyte: may be 1000 bytes or 210 bytes which is equal to 1024 bytes depending on situation.
+
+Linux: An operating system authored by Linus Torvalds as a free operating system. Companies that distribute Linux make their money in configuration and support. It is based on the UNIX operating systems.
+
+Local variable: A variable that is accessible only in a portion of the code. Generally, within a procedure and is created as you enter a procedure and destroyed as you leave.
+
+Logic Error: A semantic error. Note; Compiler writers may draw a subtle distinction between the two.
+
+Loop: A control structure in the code that causes repeated execution of a section of code.
+
+Machine Instructions: The instructions executed by a CPU. The bit level instructions of a computer.
+
+Machine Learning: Is a branch of Artificial Intelligence that uses statistical modeling to learn from experience.
+
+Malware: Software that is surreptitiously installed on a computer to damage, compromise, or acquire data. It may also be used for unauthorized accessibility to the function of the computer e.g. cause damage to a machine controlled by the computer
+
+Mega: A prefix for a million, as in a megabyte or megahertz.
+
+Memory: Addressable space for storage and retrieval of bytes of data. The term memory generally refers to the memory that is off CPU. See the terms Cache and RAM.
+
+Message Passing: A way to pass information between processes, machines, or threads that are running in parallel.
+
+Motherboard: The main circuit board generally connecting most major components of a computer such as CPU, memory, I/O devices.
+
+Multi-Core processor: a chip with multiple processors and cache memory to speed execution.
+
+Nano: a) a prefix for a billionth, as in a nanosecond or a nanometer. b) a very small thing like nanotechnology.
+
+Nanosecond: a billionth of a second. Light travels about a foot in a vacuum in a nanosecond
+
+Nest: Nesting is an important feature of most computer programs and languages. To nest a piece of code in another piece of code is to use the first code as a integral block of function in the second piece of code. For example we could nest a for statement in the body of another for statement.
+
+Network: An interconnected set of computers that can share information.
+
+Northbridge: connects the CPU to high speed data components such as memory and graphics cards.
+
+OS: Operating System.
+
+Object Oriented programming: A programming style in which variables and functions are associated in an object and visibility of the contents of the object is constrained. For example in Scratch, a sprite "owns" its own local variables and scripts/threads.
+
+Object: A collection of variables and functions brought together in a programming system to represent a physical thing, its data and its function.
+
+Octal: The base 8 number system (compare with binary). It is often used to express binary numbers in shorter strings. Counting to 10 using two octal symbols; 01, 02, 03, 04, 05, 06, 07, 10, 11, 12.
+
+On Chip: Generally means the functionality is on the CPU chip or the chip under discussion. Can refer to hardware as in "The north bridge can now be found on chip" or refer to execution as in "the data and instructions are cached on chip".
+
+Open Source: An application or software which is provided with the source code, usually with few restrictions, for repurposing or augmenting.
+
+Operating System: The program that runs on the computer hardware creating information objects such as files and processes and assures the fair and secure allocation of processor time, access to files, access to devices, and other resources. Accounts and access control of data is commonly provided giving privacy/security
+
+Operator: Is a computational or mathematical operator such as ==, equal, *, +, /. It generally is used in-between the values to be used as input for the operator (called operands). For example 1+2.
+
+PC: Personal Computer or sometimes stands for a Personal Computer running the Windows operating system.
+
+Packet: A unit of information into which data is broken up for transmission in a network or by other means. For example a stream or file of data would be broken up into packets and sent separately across the internet.
+
+Pairs Programming: A programming methodology that has two programmers set down at a single keyboard and display to program as a team effort. Producing more and better working code.
+
+Parallel Computing: The field of Computer Science that deals with algorithms, techniques and hardware that enables simultaneous execution of many streams of instructions.
+
+Parallel: processes run in parallel means they are executing at the same time on different CPUs or cores.
+
+Peripheral: A physical device used by a computer that is not part of the physical box containing CPU and memory. A printer is an example.
+
+Peta: A prefix for a quadrillion (1015) as in a petabyte.
+
+Port: A physical socket on a computer for attaching the computer to external devices such as a printer or a router.
+
+Powers of Two: A number that is the product of two multiplied together many times. The k th power of two is denoted 2k. Powers of two are very important in computing because k bits can be used to number 2k things in binary. The first few powers of two are; 1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 2048, 4096.
+
+Procedure: A standalone segment of code with a clear set of inputs and output that performs a specific function. Compare with function.
+
+Process: An operating system construct that is a running program.
+
+Processing: A language originally designed for artists to allow them to do simple graphical design programs in a movie like paradigm.
+
+Programming: Constructing a program; usually in a high level language. The art of instructing computers how to store, retrieve, and process data automatically.
+
+Program: An implementation of an algorithm.
+
+Proprietary: Owned by an individual or company and whose use generally requires payment.
+
+Protocol: A standard for communication between pieces of hardware or between pieces of software that allows information and/or commands to be exchanged.
+
+RAM: Random Access Memory. Generally refers to the memory that is not in the CPU and not a disk. In general it is volatile and anything in it is lost when the computer is turned off. It's used to temporarily store current instructions and data during execution amongst other things.
+
+Ransomware: Malicious software designed to hold data hostage for money often by encrypting it.
+
+RGB: Stands for "Red, Green, Blue". It is a way of specifying a color by giving the amount of each of three contributing primary colors to make the desired color.
+
+Reboot: To restart a computer as if the computer had been powered down even though it was turned on and possibly running.
+
+Recursion: The programming or algorithm technique of invoking a procedure from within itself. See Recursion.
+
+Router: A networking device that forwards data packets between computer networks and may also be used to connect computers to a network.
+
+Shell: A character based program that gives the user simple and programmatic access to the operating system via commands
+
+STEM: Science Technology Engineering and Mathematics. The set of fields many educational institutions and governments are focusing on to improve enrollments and retention.
+
+SW: abbreviation for software.
+
+Scalable Computing: An application supported on an amount of hardware that automatically adjusts to the size of the demand thereby saving money by using less hardware when demand is light an d more when the demand is heavy.
+
+Scratch: A language created by MIT containing colorful characters and easy for beginners to write programs without syntax errors
+
+Semantics: The meaning of statements in a language as distinct from the syntax.
+
+Semantic Error: A legal program that creates incorrect results for some input.
+
+Server: A computer that provides some service and is accessible over the internet.
+
+Simulation: Modeling the behaviors and conditions of the real world.
+
+SoC: System on a chip. A single integrated circuit that integrates all or most components of a computer including CPU, memory, I/O and bus. May including devices such as wireless modems. Contrast with motherboard-based PC architectures. Examples of SoCs include Apple M1, Snapdragon, and ARMxxx chips.
+
+Software: A set of information that includes at least one program and optionally many programs and data files. The set of information is generally related and used with a specific goal in mind such as image processing software.
+
+Solid state disk (SSD): Uses chips to emulate a rotating disk but with no moving parts. Much faster than rotating mechanical disks but currently not as much storage and more expensive.
+
+Southbridge: connects the CPU to lower speed data components such as internet, keyboard, audio, USB, etc.
+
+Speed of Light: Generally means the speed of light in a vacuum. It is about 1 foot per billionth of a second.
+
+Statement: A basic statement or command in program or the basic unit of a grammar of a programming language. For instance; the three assignment statements were followed by an if statement.
+
+String: a) An ordered sequence such as a string of bits or characters. b) a string of characters.
+
+Strongly Typed: A language is strongly typed if all type errors can be found at compile time.
+
+Supercomputer: A computer with a much higher than average performance.
+
+Syntax: The grammar for a language or the rules to decide if a statement is in the language but not the meaning.
+
+Syntax Error: Creating a illegal program in the language by making an error such as a typo, insertion, deletion, or misuse of an element of the language. E.g. leaving off a trailing semicolon in Processing or misspelling a key word.
+
+System Calls: a programmatic interface to operating system features
+
+Telepresence: A set of technologies which allows a person to feel as if they were present, to give the appearance of being present, and/or to have an effect as if present.
+
+Tera: A prefix for a trillion (1012) as in a terabyte.
+
+Text: a) just the set of bits that represents a stream of symbols in a language. It does not include any formatting information such as font or color. b) any representation of a set of symbols. c) text encoded in ASCII.
+
+Thread: A thread is a "lightweight" subunit of execution of a process that can run in parallel with other threads in the process. It is a way to have parts of a process run simultaneously.
+
+Time sharing: Fairly splitting up time between running processes.
+
+Tractable: Solvable in a practical amount of time.
+
+Type: The kind of data that can be stored or referred to and has a specific set of operations that apply to it such as addition is an operation that is used on integers. Popular types are int, float, boolean. Processing supports types like color and string as well.
+
+UAV: Unmanned Aerial Vehicle and autonomous drone.
+
+UNIX: A variety of operating system that originated in the 70s as an independent project in Bell Labs and has grown to be the basis of many of today's operating systems including Linux and Apple distributions .
+
+URL: A Uniform Resource Locator or web address, is a reference to a web resource that specifies its location on a computer network and a mechanism for retrieving it such as HTTP or FTP
+
+USB: Universal Serial Bus. A popular standard for creating a data path between computers and peripherals. It includes the capability of powering a device. More recently USB has been used as a power source alone, disregarding its data protocols.
+
+Unicode: A method for encoding a string of symbols as bits. This set of schemes can be used to represent nearly any symbol including Chinese. However, Klingon (plqaD) is not currently in the standard. 
+
+Variable: A place in a running program where data is stored. For example the variable x might contain a number like 42.
+
+Virtual Machine: A virtual machine is a software implementation of a machine that executes programs like a physical machine. The machine that is mimicked need not really have a hardware implementation but only exist as a virtual machine.
+
+Visibility: Said of a variable. A variable is visible if its contents can be accessed by its name. A local variable in one function might not be visible from inside another function.
+
+Vi: The classic text editor on a UNIX machine. Generally available on all UNIX based operating systems. The modern version of vi is vim.
+
+Windows: The proprietary operating system distributed by Microsoft.
+
