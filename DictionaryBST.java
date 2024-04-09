@@ -2,13 +2,13 @@ public class DictionaryBST {
    private DictionaryNode root;
 
    private class DictionaryNode {
-      private String key;
+      private String value;
       private DictionaryNode left, right;
       private int N;
       public String definition;
 
-      public DictionaryNode(String key, int N, String definition) {
-         this.key = key;
+      public DictionaryNode(String value, int N, String definition) {
+         this.value = value;
          this.N = N;
          this.definition = definition;
       }
@@ -26,20 +26,20 @@ public class DictionaryBST {
    }
 
    // make a bool search method
-   public boolean search(String key) {
-      return getBool(root, key);
+   public boolean search(String value) {
+      return getBool(root, value);
    }
 
-   private boolean getBool(DictionaryNode x, String key) {
+   private boolean getBool(DictionaryNode x, String value) {
       if (x == null) {
          return false;
       }
 
-      int cmp = key.compareTo(x.key);
+      int cmp = value.compareTo(x.value);
       if (cmp < 0)
-         return getBool(x.left, key);
+         return getBool(x.left, value);
       else if (cmp > 0)
-         return getBool(x.right, key);
+         return getBool(x.right, value);
       else
          return true;
    }
@@ -48,35 +48,35 @@ public class DictionaryBST {
       root = put(root, s, definition);
    }
 
-   private DictionaryNode put(DictionaryNode x, String key, String definition) {
+   private DictionaryNode put(DictionaryNode x, String value, String definition) {
       if (x == null)
-         return new DictionaryNode(key, 1, definition);
-      int cmp = key.compareTo(x.key);
+         return new DictionaryNode(value, 1, definition);
+      int cmp = value.compareTo(x.value);
       if (cmp < 0)
-         x.left = put(x.left, key, definition);
+         x.left = put(x.left, value, definition);
       else if (cmp > 0)
-         x.right = put(x.right, key, definition);
+         x.right = put(x.right, value, definition);
       else
-         x.key = key;
+         x.value = value;
       x.N = 1 + size(x.left) + size(x.right);
       return x;
    }
 
-   public void remove(String key) {
-      root = delete(root, key);
+   public void remove(String value) {
+      root = delete(root, value);
    }
 
    // deletes a specific DictionaryNode and moves the left most of the right
    // sub-tree to the
    // deleted DictionaryNode
-   private DictionaryNode delete(DictionaryNode x, String key) {
+   private DictionaryNode delete(DictionaryNode x, String value) {
       if (x == null)
          return null;
-      int cmp = key.compareTo(x.key);
+      int cmp = value.compareTo(x.value);
       if (cmp < 0)
-         x.left = delete(x.left, key);
+         x.left = delete(x.left, value);
       else if (cmp > 0)
-         x.right = delete(x.right, key);
+         x.right = delete(x.right, value);
       else {
          if (x.right == null)
             return x.left;
@@ -102,7 +102,7 @@ public class DictionaryBST {
 
    // gets the left most of a tree
    public String min() {
-      return min(root).key;
+      return min(root).value;
    }
 
    private DictionaryNode min(DictionaryNode x) {
@@ -113,7 +113,7 @@ public class DictionaryBST {
 
    // gets the right most of a tree
    public String max() {
-      return max(root).key;
+      return max(root).value;
    }
 
    private DictionaryNode max(DictionaryNode x) {
@@ -131,8 +131,8 @@ public class DictionaryBST {
       if (x == null)
          return;
       print(x.left);
-      System.out.println(x.key + "| left: " + (x.left == null ? "null" : x.left.key) + "\t| right: "
-            + (x.right == null ? "null" : x.right.key) + "\t| N: " + x.N);
+      System.out.println(x.value + "| left: " + (x.left == null ? "null" : x.left.value) + "\t| right: "
+            + (x.right == null ? "null" : x.right.value) + "\t| N: " + x.N);
       print(x.right);
    }
 }
