@@ -137,8 +137,12 @@ public class DictionaryBST {
    }
 
    // method that prints a specific DictionaryNode
-   public void printDictionaryItem(String value) {
-      printDictionaryItem(root, value);
+   public void printDictionaryItem(String value) throws Exception {
+      if (search(value)) {
+         printDictionaryItem(root, value);
+      } else {
+         throw new Exception(("The word \"" + value + "\" is not in the dictionary\n"));
+      }
    }
 
    private void printDictionaryItem(DictionaryNode x, String value) {
@@ -156,6 +160,7 @@ public class DictionaryBST {
    // printDictionary method that prints all the nodes and there definitions
    public void printDictionary() {
       printDictionary(root);
+      System.out.println("");
    }
 
    private void printDictionary(DictionaryNode x) {
