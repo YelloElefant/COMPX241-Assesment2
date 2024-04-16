@@ -32,21 +32,37 @@ public class DictionaryLookup {
      */
     public static void main(String[] args) {
         System.out.println("...Welcome to the Dictionary...\n");
+
+        // print all the commands
         printCommandList();
 
         System.out.println("Loading Dictionary...");
+
+        // create a new dictionary
         DictionaryBST bst = new DictionaryBST();
+
+        // read in the dictionary file
         readInFile("CS-Dictionary-full.txt", bst);
         System.out.println("Dictionary Loaded: " + bst.size() + " words\n");
+
+        // run the command line interface scanner
         Scanner scanner = new Scanner(System.in);
 
+        // run the command line interface
         while (true) {
+            // print the command list
             printCommandList();
+
+            // get the command from the user
             System.out.print("Enter a command: ");
             String command = scanner.nextLine();
+
+            // check if the user wants to exit
             if (command.equals("exit")) {
                 break;
             }
+
+            // run the command
             runCommand(command, bst);
         }
         scanner.close();
@@ -75,20 +91,32 @@ public class DictionaryLookup {
      */
     public static void readInFile(String filename, DictionaryBST bst) {
         try {
+            // read in the file
             File myObj = new File(filename);
             Scanner myReader = new Scanner(myObj);
+
+            // read in the words and definitions
             while (myReader.hasNextLine()) {
                 String data = myReader.nextLine();
+
+                // skip empty lines
                 if (data.isEmpty()) {
                     continue;
                 }
+
+                // split the data into the word and definition
                 String[] splitData = data.split(":");
                 String key = splitData[0];
                 String definition = splitData[1].trim();
+
+                // add the word and definition to the dictionary
                 bst.insert(key, definition);
             }
+
+            // close the file reader
             myReader.close();
         } catch (FileNotFoundException e) {
+            // print the error message
             System.out.println("An error occurred.");
             e.printStackTrace();
 
@@ -102,35 +130,56 @@ public class DictionaryLookup {
      * @param bst     the binary search tree dictionary
      */
     public static void runCommand(String command, DictionaryBST bst) {
+        // split the command into the method, key, and definition
         command = command.trim().replaceAll(" +", " ");
         String[] splitCommand = command.split(" ");
         String method = splitCommand[0];
 
+        // check if the command is valid
         String key = splitCommand.length > 1 ? splitCommand[1] : "";
         String definition = splitCommand.length > 2 ? splitCommand[2] : "";
-        try {
 
+        try {
+            // run the command
             if (method.equals("search")) {
+                // search for the word in the dictionary
                 boolean result = bst.search(key);
                 System.out.print("Dictionary ");
                 System.out.println(result ? "Does Contain: " + key : "Doesn't Contain: " + key);
+
             } else if (method.equals("add")) {
+                // if the definition is blank throw an exception
                 if (definition.isBlank())
                     throw new Exception("Could not add \"" + key + "\" Definition cannot be blank");
 
+                // add the word and definition to the dictionary
                 bst.insert(key, definition);
                 System.out.println("Added: \"" + key + "\" to dictionary");
+
             } else if (method.equals("remove")) {
+                // remove the word from the dictionary
                 bst.remove(key);
+
             } else if (method.equals("print") && key.equals("all")) {
+                // print all the words and definitions in the dictionary
                 bst.printDictionary();
+
             } else if (method.equals("print")) {
+                // print the word and definition from the dictionary
                 bst.printDictionaryItem(key);
+
+            } else if (method.equals("help")) {
+                // print the command list
+                printCommandList();
+
             } else {
+                // throw an exception if the command is invalid/empty
                 throw new Exception("Invalid Command\n");
+
             }
         } catch (Exception ex) {
-            System.out.println(ex.getMessage());
+            // print the error message
+            System.err.println(ex.getMessage());
         }
     }
 

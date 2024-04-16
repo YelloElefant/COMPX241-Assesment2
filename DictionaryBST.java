@@ -27,11 +27,22 @@ public class DictionaryBST {
     * DictionaryBSTNode class
     */
    private class DictionaryNode {
+      // The value of the node
       private String value;
+      // The left and right children of the node
       private DictionaryNode left, right;
+      // The size of the node
       private int N;
+      // The definition of the node
       public String definition;
 
+      /**
+       * Constructor for the DictionaryNode class
+       * 
+       * @param value      the value of the node
+       * @param N          the size of the node
+       * @param definition the definition of the node
+       */
       public DictionaryNode(String value, int N, String definition) {
          this.value = value;
          this.N = N;
@@ -79,11 +90,17 @@ public class DictionaryBST {
     * @return true if the value is in the BST, false if it is not
     */
    private boolean getBool(DictionaryNode x, String value) {
+      // if the node is null, return false
       if (x == null) {
          return false;
       }
 
+      // compare the value to the current node
       int cmp = value.compareTo(x.value);
+
+      // if the value is less than the current node, search the left child, if the
+      // value is greater than the current node, search the right child,
+      // if the value is equal to the current node, return true
       if (cmp < 0)
          return getBool(x.left, value);
       else if (cmp > 0)
@@ -111,15 +128,26 @@ public class DictionaryBST {
     * @return the node that was inserted
     */
    private DictionaryNode put(DictionaryNode x, String value, String definition) {
+      // if the node is null, create a new node
       if (x == null)
          return new DictionaryNode(value, 1, definition);
+
+      // compare the value to the current node
       int cmp = value.compareTo(x.value);
+
+      // if the value is less than the current node, insert the value into the left
+      // child, if the value is greater than the current node, insert the value into
+      // the right child,
+      // if the value is equal to the current node, update the definition of the
+      // current node
       if (cmp < 0)
          x.left = put(x.left, value, definition);
       else if (cmp > 0)
          x.right = put(x.right, value, definition);
       else
          x.value = value;
+
+      // update the size of the current node
       x.N = 1 + size(x.left) + size(x.right);
       return x;
    }
@@ -141,9 +169,18 @@ public class DictionaryBST {
     * @return the node that was removed
     */
    private DictionaryNode delete(DictionaryNode x, String value) {
+      // if the node is null, return null
       if (x == null)
          return null;
+
+      // compare the value to the current node
       int cmp = value.compareTo(x.value);
+
+      // if the value is less than the current node, remove the value from the left
+      // child, if the value is greater than the current node, remove the value from
+      // the right child,
+      // if the value is equal to the current node, remove the current node and
+      // replace it with the minimum value in the right child
       if (cmp < 0)
          x.left = delete(x.left, value);
       else if (cmp > 0)
@@ -158,6 +195,8 @@ public class DictionaryBST {
          x.right = deleteMin(t.right);
          x.left = t.left;
       }
+
+      // update the size of the current node
       x.N = size(x.left) + size(x.right) + 1;
       return x;
    }
@@ -169,10 +208,16 @@ public class DictionaryBST {
     * @return the node that was deleted
     */
    private DictionaryNode deleteMin(DictionaryNode x) {
+      // if the left child is null, return the right child
       if (x.left == null)
          return x.right;
+
+      // remove the minimum value from the left child
       x.left = deleteMin(x.left);
+
+      // update the size of the current node
       x.N = size(x.left) + size(x.right) + 1;
+
       return x;
    }
 
@@ -192,8 +237,11 @@ public class DictionaryBST {
     * @return the minimum value in the BST
     */
    private DictionaryNode min(DictionaryNode x) {
+      // if the left child is null, return the current node
       if (x.left == null)
          return x;
+
+      // get the minimum value from the left child
       return min(x.left);
    }
 
@@ -213,8 +261,11 @@ public class DictionaryBST {
     * @return the maximum value in the BST
     */
    private DictionaryNode max(DictionaryNode x) {
+      // if the right child is null, return the current node
       if (x.right == null)
          return x;
+
+      // get the maximum value from the right child
       return max(x.right);
    }
 
@@ -231,11 +282,18 @@ public class DictionaryBST {
     * @param x the node to start at
     */
    private void print(DictionaryNode x) {
+      // if the node is null, return
       if (x == null)
          return;
+
+      // print the left child, the current node, and the right child
       print(x.left);
+
+      // print the current node
       System.out.println(x.value + "| left: " + (x.left == null ? "null" : x.left.value) + "\t| right: "
             + (x.right == null ? "null" : x.right.value) + "\t| N: " + x.N);
+
+      // print the right child
       print(x.right);
    }
 
@@ -246,9 +304,11 @@ public class DictionaryBST {
     * @throws Exception if the value is not in the BST
     */
    public void printDictionaryItem(String value) throws Exception {
+      // if the value is in the BST, print the value and its definition
       if (search(value)) {
          printDictionaryItem(root, value);
       } else {
+         // if the value is not in the BST, throw an exception
          throw new Exception(("The word \"" + value + "\" is not in the dictionary\n"));
       }
    }
@@ -260,9 +320,16 @@ public class DictionaryBST {
     * @param value the value to print and stop searching at
     */
    private void printDictionaryItem(DictionaryNode x, String value) {
+      // if the node is null, return
       if (x == null)
          return;
+
+      // compare the value to the current node
       int cmp = value.compareTo(x.value);
+
+      // if the value is less than the current node, search the left child, if the
+      // value is greater than the current node, search the right child,
+      // if the value is equal to the current node, print the value and its definition
       if (cmp < 0)
          printDictionaryItem(x.left, value);
       else if (cmp > 0)
@@ -285,8 +352,11 @@ public class DictionaryBST {
     * @param x the node to start at
     */
    private void printDictionary(DictionaryNode x) {
+      // if the node is null, return
       if (x == null)
          return;
+
+      // print the left child, the current node, and the right child
       printDictionary(x.left);
       System.out.println(x.value + "\n" + x.definition + "\n");
       printDictionary(x.right);
