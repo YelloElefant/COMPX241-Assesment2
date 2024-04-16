@@ -2,20 +2,33 @@ public class StrBST {
    private Node root;
 
    private class Node {
-      private String key;
+      private String value;
       private Node left, right;
       private int N;
+      private String definition;
 
-      public Node(String key, int N) {
-         this.key = key;
+      public Node(String value, int N, String definition) {
+         this.value = value;
          this.N = N;
+         this.definition = definition;
       }
    }
 
+   /**
+    * method that gets the size of the BST recursivaly
+    * 
+    * @return the size of the BST
+    */
    public int size() {
       return size(root);
    }
 
+   /**
+    * method that gets the size of a specific node
+    * 
+    * @param x
+    * @return the size of the node
+    */
    private int size(Node x) {
       if (x == null)
          return 0;
@@ -23,57 +36,93 @@ public class StrBST {
          return x.N;
    }
 
-   // make a bool search method
-   public boolean search(String key) {
-      return getBool(root, key);
+   /**
+    * method that searches for a specific value in the BST
+    * 
+    * @param value the value to search for
+    * @return true if the value is in the BST, false if it is not
+    */
+   public boolean search(String value) {
+      return getBool(root, value);
    }
 
-   private boolean getBool(Node x, String key) {
+   /**
+    * method that gets a specific value in the BST
+    * 
+    * @param x     the node to start at
+    * @param value the value to search for
+    * @return true if the value is in the BST, false if it is not
+    */
+   private boolean getBool(Node x, String value) {
       if (x == null) {
          return false;
       }
 
-      int cmp = key.compareTo(x.key);
+      int cmp = value.compareTo(x.value);
       if (cmp < 0)
-         return getBool(x.left, key);
+         return getBool(x.left, value);
       else if (cmp > 0)
-         return getBool(x.right, key);
+         return getBool(x.right, value);
       else
          return true;
    }
 
-   public void insert(String s) {
-      root = put(root, s);
+   /**
+    * method that inserts a value into the BST
+    * 
+    * @param s          the value to insert
+    * @param definition the definition of the value
+    */
+   public void insert(String s, String definition) {
+      root = put(root, s, definition);
    }
 
-   private Node put(Node x, String key) {
+   /**
+    * method that inserts a value into the BST
+    * 
+    * @param x          the node to start at
+    * @param value      the value to insert
+    * @param definition the definition of the value
+    * @return the node that was inserted
+    */
+   private Node put(Node x, String value, String definition) {
       if (x == null)
-         return new Node(key, 1);
-      int cmp = key.compareTo(x.key);
+         return new Node(value, 1, definition);
+      int cmp = value.compareTo(x.value);
       if (cmp < 0)
-         x.left = put(x.left, key);
+         x.left = put(x.left, value, definition);
       else if (cmp > 0)
-         x.right = put(x.right, key);
+         x.right = put(x.right, value, definition);
       else
-         x.key = key;
+         x.value = value;
       x.N = 1 + size(x.left) + size(x.right);
       return x;
    }
 
-   public void remove(String key) {
-      root = delete(root, key);
+   /**
+    * method that removes a value from the BST
+    * 
+    * @param value the value to remove
+    */
+   public void remove(String value) {
+      root = delete(root, value);
    }
 
-   // deletes a specific node and moves the left most of the right sub-tree to the
-   // deleted node
-   private Node delete(Node x, String key) {
+   /**
+    * method that removes a value from the BST
+    * 
+    * @param x     the node to start at
+    * @param value the value to remove
+    * @return the node that was removed
+    */
+   private Node delete(Node x, String value) {
       if (x == null)
          return null;
-      int cmp = key.compareTo(x.key);
+      int cmp = value.compareTo(x.value);
       if (cmp < 0)
-         x.left = delete(x.left, key);
+         x.left = delete(x.left, value);
       else if (cmp > 0)
-         x.right = delete(x.right, key);
+         x.right = delete(x.right, value);
       else {
          if (x.right == null)
             return x.left;
@@ -88,7 +137,12 @@ public class StrBST {
       return x;
    }
 
-   // deletes the left most of a tree
+   /**
+    * method that deletes the minimum value in the BST
+    * 
+    * @param x the node to start at
+    * @return the node that was deleted
+    */
    private Node deleteMin(Node x) {
       if (x.left == null)
          return x.right;
@@ -97,39 +151,66 @@ public class StrBST {
       return x;
    }
 
-   // gets the left most of a tree
+   /**
+    * method that gets the minimum value in the BST (left most node)
+    * 
+    * @return the minimum value in the BST
+    */
    public String min() {
-      return min(root).key;
+      return min(root).value;
    }
 
+   /**
+    * method that gets the minimum value in the BST (left most node)
+    * 
+    * @param x the node to start at
+    * @return the minimum value in the BST
+    */
    private Node min(Node x) {
       if (x.left == null)
          return x;
       return min(x.left);
    }
 
-   // gets the right most of a tree
+   /**
+    * method that gets the maximum value in the BST (right most node)
+    * 
+    * @return the maximum value in the BST
+    */
    public String max() {
-      return max(root).key;
+      return max(root).value;
    }
 
+   /**
+    * method that gets the maximum value in the BST (right most node)
+    * 
+    * @param x the node to start at
+    * @return the maximum value in the BST
+    */
    private Node max(Node x) {
       if (x.right == null)
          return x;
       return max(x.right);
    }
 
-   // make in-order traversal method for print
+   /**
+    * method that prints the BST
+    */
    public void print() {
       print(root);
    }
 
+   /**
+    * method that prints the BST
+    * 
+    * @param x the node to start at
+    */
    private void print(Node x) {
       if (x == null)
          return;
       print(x.left);
-      System.out.println(x.key + "| left: " + (x.left == null ? "null" : x.left.key) + "\t| right: "
-            + (x.right == null ? "null" : x.right.key) + "\t| N: " + x.N);
+      System.out.println(x.value + "| left: " + (x.left == null ? "null" : x.left.value) + "\t| right: "
+            + (x.right == null ? "null" : x.right.value) + "\t| N: " + x.N);
       print(x.right);
    }
 }
