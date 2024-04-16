@@ -5,12 +5,10 @@ public class StrBST {
       private String value;
       private Node left, right;
       private int N;
-      private String definition;
 
-      public Node(String value, int N, String definition) {
+      public Node(String value, int N) {
          this.value = value;
          this.N = N;
-         this.definition = definition;
       }
    }
 
@@ -70,29 +68,27 @@ public class StrBST {
    /**
     * method that inserts a value into the BST
     * 
-    * @param s          the value to insert
-    * @param definition the definition of the value
+    * @param s the value to insert
     */
-   public void insert(String s, String definition) {
-      root = put(root, s, definition);
+   public void insert(String s) {
+      root = put(root, s);
    }
 
    /**
     * method that inserts a value into the BST
     * 
-    * @param x          the node to start at
-    * @param value      the value to insert
-    * @param definition the definition of the value
+    * @param x     the node to start at
+    * @param value the value to insert
     * @return the node that was inserted
     */
-   private Node put(Node x, String value, String definition) {
+   private Node put(Node x, String value) {
       if (x == null)
-         return new Node(value, 1, definition);
+         return new Node(value, 1);
       int cmp = value.compareTo(x.value);
       if (cmp < 0)
-         x.left = put(x.left, value, definition);
+         x.left = put(x.left, value);
       else if (cmp > 0)
-         x.right = put(x.right, value, definition);
+         x.right = put(x.right, value);
       else
          x.value = value;
       x.N = 1 + size(x.left) + size(x.right);
