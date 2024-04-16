@@ -50,9 +50,6 @@ public class DictionaryLookup {
 
         // run the command line interface
         while (true) {
-            // print the command list
-            printCommandList();
-
             // get the command from the user
             System.out.print("Enter a command: ");
             String command = scanner.nextLine();
