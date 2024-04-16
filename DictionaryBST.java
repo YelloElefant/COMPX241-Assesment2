@@ -1,6 +1,31 @@
+/**
+ * DictionaryBST.java
+ * 
+ * This class is a binary search tree implementation of a dictionary. It has
+ * methods to insert, remove, search, print, and print all the nodes in the
+ * dictionary. It also has methods to print a specific node and its definition
+ * and to print the minimum and maximum nodes in the dictionary.
+ * 
+ * The DictionaryNode class is a private inner class that holds the value of the
+ * node, the left and right children, the size of the node, and the definition
+ * of
+ * the node.
+ * 
+ * @author Alexander Trotter
+ * @version 04/15/2021
+ * 
+ * 
+ * 
+ */
 public class DictionaryBST {
+   /**
+    * The root of the binary search tree
+    */
    private DictionaryNode root;
 
+   /**
+    * DictionaryBSTNode class
+    */
    private class DictionaryNode {
       private String value;
       private DictionaryNode left, right;
@@ -14,10 +39,21 @@ public class DictionaryBST {
       }
    }
 
+   /**
+    * method that gets the size of the BST recursivaly
+    * 
+    * @return the size of the BST
+    */
    public int size() {
       return size(root);
    }
 
+   /**
+    * method that gets the size of a specific node
+    * 
+    * @param x
+    * @return the size of the node
+    */
    private int size(DictionaryNode x) {
       if (x == null)
          return 0;
@@ -25,11 +61,23 @@ public class DictionaryBST {
          return x.N;
    }
 
-   // make a bool search method
+   /**
+    * method that searches for a specific value in the BST
+    * 
+    * @param value the value to search for
+    * @return true if the value is in the BST, false if it is not
+    */
    public boolean search(String value) {
       return getBool(root, value);
    }
 
+   /**
+    * method that gets a specific value in the BST
+    * 
+    * @param x     the node to start at
+    * @param value the value to search for
+    * @return true if the value is in the BST, false if it is not
+    */
    private boolean getBool(DictionaryNode x, String value) {
       if (x == null) {
          return false;
@@ -44,10 +92,24 @@ public class DictionaryBST {
          return true;
    }
 
+   /**
+    * method that inserts a value into the BST
+    * 
+    * @param s          the value to insert
+    * @param definition the definition of the value
+    */
    public void insert(String s, String definition) {
       root = put(root, s, definition);
    }
 
+   /**
+    * method that inserts a value into the BST
+    * 
+    * @param x          the node to start at
+    * @param value      the value to insert
+    * @param definition the definition of the value
+    * @return the node that was inserted
+    */
    private DictionaryNode put(DictionaryNode x, String value, String definition) {
       if (x == null)
          return new DictionaryNode(value, 1, definition);
@@ -62,13 +124,22 @@ public class DictionaryBST {
       return x;
    }
 
+   /**
+    * method that removes a value from the BST
+    * 
+    * @param value the value to remove
+    */
    public void remove(String value) {
       root = delete(root, value);
    }
 
-   // deletes a specific DictionaryNode and moves the left most of the right
-   // sub-tree to the
-   // deleted DictionaryNode
+   /**
+    * method that removes a value from the BST
+    * 
+    * @param x     the node to start at
+    * @param value the value to remove
+    * @return the node that was removed
+    */
    private DictionaryNode delete(DictionaryNode x, String value) {
       if (x == null)
          return null;
@@ -91,7 +162,12 @@ public class DictionaryBST {
       return x;
    }
 
-   // deletes the left most of a tree
+   /**
+    * method that deletes the minimum value in the BST
+    * 
+    * @param x the node to start at
+    * @return the node that was deleted
+    */
    private DictionaryNode deleteMin(DictionaryNode x) {
       if (x.left == null)
          return x.right;
@@ -100,33 +176,60 @@ public class DictionaryBST {
       return x;
    }
 
-   // gets the left most of a tree
+   /**
+    * method that gets the minimum value in the BST (left most node)
+    * 
+    * @return the minimum value in the BST
+    */
    public String min() {
       return min(root).value;
    }
 
+   /**
+    * method that gets the minimum value in the BST (left most node)
+    * 
+    * @param x the node to start at
+    * @return the minimum value in the BST
+    */
    private DictionaryNode min(DictionaryNode x) {
       if (x.left == null)
          return x;
       return min(x.left);
    }
 
-   // gets the right most of a tree
+   /**
+    * method that gets the maximum value in the BST (right most node)
+    * 
+    * @return the maximum value in the BST
+    */
    public String max() {
       return max(root).value;
    }
 
+   /**
+    * method that gets the maximum value in the BST (right most node)
+    * 
+    * @param x the node to start at
+    * @return the maximum value in the BST
+    */
    private DictionaryNode max(DictionaryNode x) {
       if (x.right == null)
          return x;
       return max(x.right);
    }
 
-   // make in-order traversal method for print
+   /**
+    * method that prints the BST
+    */
    public void print() {
       print(root);
    }
 
+   /**
+    * method that prints the BST
+    * 
+    * @param x the node to start at
+    */
    private void print(DictionaryNode x) {
       if (x == null)
          return;
@@ -136,7 +239,12 @@ public class DictionaryBST {
       print(x.right);
    }
 
-   // method that prints a specific DictionaryNode
+   /**
+    * method that prints a specific value and its definition
+    * 
+    * @param value the value to print
+    * @throws Exception if the value is not in the BST
+    */
    public void printDictionaryItem(String value) throws Exception {
       if (search(value)) {
          printDictionaryItem(root, value);
@@ -145,6 +253,12 @@ public class DictionaryBST {
       }
    }
 
+   /**
+    * method that prints a specific value and its definition
+    * 
+    * @param x     node to start at
+    * @param value the value to print and stop searching at
+    */
    private void printDictionaryItem(DictionaryNode x, String value) {
       if (x == null)
          return;
@@ -157,17 +271,24 @@ public class DictionaryBST {
          System.out.println(x.value + " : " + x.definition);
    }
 
-   // printDictionary method that prints all the nodes and there definitions
+   /**
+    * method that prints all the nodes in the BST
+    */
    public void printDictionary() {
       printDictionary(root);
       System.out.println("");
    }
 
+   /**
+    * method that prints all the nodes in the BST
+    * 
+    * @param x the node to start at
+    */
    private void printDictionary(DictionaryNode x) {
       if (x == null)
          return;
       printDictionary(x.left);
-      System.out.println(x.value + " : " + x.definition);
+      System.out.println(x.value + "\n" + x.definition + "\n");
       printDictionary(x.right);
    }
 }

@@ -2,16 +2,37 @@ import java.io.File; // Import the File class
 import java.io.FileNotFoundException; // Import this class to handle errors
 import java.util.Scanner;
 
+/**
+ * DictionaryLookup.java
+ * 
+ * This class is a command line interface for the DictionaryBST class. It has
+ * methods to read in a file, print the command list, and run a command. The
+ * commands are search, add, remove, print, print all, and exit. The search
+ * command searches for a word in the dictionary. The add command adds a word
+ * and
+ * definition to the dictionary. The remove command removes a word from the
+ * dictionary. The print command prints a specific word and definition from the
+ * dictionary. The print all command prints all the words and definitions in the
+ * dictionary. The exit command exits the program.
+ * 
+ * The DictionaryLookup class uses the DictionaryBST class to create a binary
+ * search tree dictionary. It reads in a file of words and definitions and adds
+ * them to the dictionary. It then runs the command line interface for the
+ * dictionary.
+ * 
+ * @author Alexander Trotter
+ * @version 04/15/2021
+ */
 public class DictionaryLookup {
+
+    /**
+     * Main method that runs the command line interface for the dictionary
+     * 
+     * @param args the command line arguments
+     */
     public static void main(String[] args) {
         System.out.println("...Welcome to the Dictionary...\n");
-        System.out.println("Commands: ");
-        System.out.println("search <word>");
-        System.out.println("add <word> <definition>");
-        System.out.println("remove <word>");
-        System.out.println("print <word>");
-        System.out.println("print all");
-        System.out.println("exit\n");
+        printCommandList();
 
         System.out.println("Loading Dictionary...");
         DictionaryBST bst = new DictionaryBST();
@@ -20,6 +41,7 @@ public class DictionaryLookup {
         Scanner scanner = new Scanner(System.in);
 
         while (true) {
+            printCommandList();
             System.out.print("Enter a command: ");
             String command = scanner.nextLine();
             if (command.equals("exit")) {
@@ -30,7 +52,27 @@ public class DictionaryLookup {
         scanner.close();
     }
 
-    // method that reads a file in and puts the contents into a bst dictionary
+    /**
+     * Method that prints the command list
+     */
+    public static void printCommandList() {
+        System.out.println("Commands: ");
+        System.out.println("search <word>");
+        System.out.println("add <word> <definition>");
+        System.out.println("remove <word>");
+        System.out.println("print <word>");
+        System.out.println("print all");
+        System.out.println("exit\n");
+    }
+
+    /**
+     * Method that reads in a file and adds the words and definitions to the
+     * dictionary
+     * 
+     * @param filename the name of the file
+     * @param bst      the binary search tree to enter the words and definitions
+     *                 into
+     */
     public static void readInFile(String filename, DictionaryBST bst) {
         try {
             File myObj = new File(filename);
@@ -42,7 +84,7 @@ public class DictionaryLookup {
                 }
                 String[] splitData = data.split(":");
                 String key = splitData[0];
-                String definition = splitData[1];
+                String definition = splitData[1].trim();
                 bst.insert(key, definition);
             }
             myReader.close();
@@ -53,9 +95,12 @@ public class DictionaryLookup {
         }
     }
 
-    // method that takes a string command and runs the method associated with it in
-    // the bst
-
+    /**
+     * Method that runs a command on the dictionary
+     * 
+     * @param command the command to run
+     * @param bst     the binary search tree dictionary
+     */
     public static void runCommand(String command, DictionaryBST bst) {
         command = command.trim().replaceAll(" +", " ");
         String[] splitCommand = command.split(" ");
