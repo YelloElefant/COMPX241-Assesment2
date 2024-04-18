@@ -60,7 +60,7 @@ public class DictionaryLookup {
             }
 
             // run the command
-            runCommand(command, bst);
+            runCommand(command, bst, scanner);
         }
         scanner.close();
     }
@@ -71,7 +71,7 @@ public class DictionaryLookup {
     public static void printCommandList() {
         System.out.println("Commands: ");
         System.out.println("search <word>");
-        System.out.println("add <word> <definition>");
+        System.out.println("add <word> : <definition>");
         System.out.println("remove <word>");
         System.out.println("print <word>");
         System.out.println("print all");
@@ -127,13 +127,10 @@ public class DictionaryLookup {
      * @param command the command to run
      * @param bst     the binary search tree dictionary
      */
-    public static void runCommand(String command, DictionaryBST bst) {
+    public static void runCommand(String command, DictionaryBST bst, Scanner scanner) {
         // split the command into the method, key, and definition
-        command = command.trim().replaceAll(" +", " ");
-        String[] splitCommand = command.split(" ");
+        String[] splitCommand = splitCommand(command);
         String method = splitCommand[0];
-
-        // check if the command is valid
         String key = splitCommand.length > 1 ? splitCommand[1] : "";
         String definition = splitCommand.length > 2 ? splitCommand[2] : "";
 
@@ -181,4 +178,26 @@ public class DictionaryLookup {
         }
     }
 
+    public static String[] splitCommand(String command) {
+        String[] splitCommand = command.split(" ");
+        String method = splitCommand[0];
+        command = "";
+        for (int i = 1; i < splitCommand.length; i++) {
+            command = command + splitCommand[i] + " ";
+        }
+        command = command.trim();
+
+        if (method.equals("search") || method.equals("remove") || method.equals("print")) {
+            String[] result = new String[] { method, command };
+            return result;
+        } else if (method.equals("add")) {
+            splitCommand = command.split(":");
+            String key = splitCommand[0].length() > 1 ? splitCommand[0] : "";
+            String definition = splitCommand[1].length() > 2 ? splitCommand[1] : "";
+            return new String[] { method, key, definition };
+        } else {
+            return new String[] { method, command };
+        }
+
+    }
 }
