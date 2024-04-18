@@ -147,9 +147,9 @@ public class DictionaryLookup {
 
             } else if (method.equals("add")) {
                 // if the definition is blank throw an exception
-                if (definition.isBlank())
+                if (definition.isBlank()) {
                     throw new Exception("Could not add \"" + key + "\" Definition cannot be blank");
-
+                }
                 // add the word and definition to the dictionary
                 bst.insert(key, definition);
                 System.out.println("Added: \"" + key + "\" to dictionary");
