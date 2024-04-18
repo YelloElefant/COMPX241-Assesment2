@@ -192,8 +192,8 @@ public class DictionaryLookup {
             return result;
         } else if (method.equals("add")) {
             splitCommand = command.split(":");
-            String key = splitCommand[0].length() > 1 ? splitCommand[0] : "";
-            String definition = splitCommand[1].length() > 2 ? splitCommand[1] : "";
+            String key = (splitCommand[0].length() > 1 ? splitCommand[0] : "").trim();
+            String definition = (splitCommand[1].length() > 2 ? splitCommand[1] : "").trim();
             return new String[] { method, key, definition };
         } else {
             return new String[] { method, command };
