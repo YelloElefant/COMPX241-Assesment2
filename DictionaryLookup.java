@@ -135,6 +135,7 @@ public class DictionaryLookup {
         String definition = splitCommand.length > 2 ? splitCommand[2] : "";
 
         try {
+
             // run the command
             if (method.equals("search")) {
                 // search for the word in the dictionary
@@ -144,7 +145,9 @@ public class DictionaryLookup {
 
             } else if (method.equals("add")) {
                 // if the definition is blank throw an exception
-                if (definition.isBlank()) {
+                if (key.isBlank()) {
+                    throw new Exception("Could not add \" \" key cannot be blank");
+                } else if (definition.isBlank()) {
                     throw new Exception("Could not add \"" + key + "\" Definition cannot be blank");
                 }
                 // add the word and definition to the dictionary
@@ -154,6 +157,7 @@ public class DictionaryLookup {
             } else if (method.equals("remove")) {
                 // remove the word from the dictionary
                 bst.remove(key);
+                System.out.println("Removed: \"" + key + "\" from the dictionary");
 
             } else if (method.equals("print")) {
                 // print the word and definition from the dictionary
@@ -189,8 +193,8 @@ public class DictionaryLookup {
 
         if (method.equals("add")) {
             splitCommand = command.split(":");
-            String key = (splitCommand[0].length() > 1 ? splitCommand[0] : "").trim();
-            String definition = (splitCommand[1].length() > 2 ? splitCommand[1] : "").trim();
+            String key = (splitCommand.length >= 1 ? splitCommand[0] : "").trim();
+            String definition = (splitCommand.length >= 2 ? splitCommand[1] : "").trim();
             return new String[] { method, key, definition };
         }
         return new String[] { method, command };
