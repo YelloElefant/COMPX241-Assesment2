@@ -75,6 +75,7 @@ public class DictionaryLookup {
         System.out.println("remove <word>");
         System.out.println("print <word>");
         System.out.println("print all");
+        System.out.println("help");
         System.out.println("exit\n");
     }
 

@@ -50,6 +50,10 @@ public class DictionaryBST {
       }
    }
 
+   public DictionaryNode getRoot() {
+      return root;
+   }
+
    /**
     * method that gets the size of the BST recursivaly
     * 
