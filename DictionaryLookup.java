@@ -155,13 +155,13 @@ public class DictionaryLookup {
                 // remove the word from the dictionary
                 bst.remove(key);
 
-            } else if (method.equals("print") && key.equals("all")) {
-                // print all the words and definitions in the dictionary
-                bst.printDictionary();
-
             } else if (method.equals("print")) {
                 // print the word and definition from the dictionary
-                bst.printDictionaryItem(key);
+                if (key.equals("all")) {
+                    bst.printDictionary();
+                } else {
+                    bst.printDictionaryItem(key);
+                }
 
             } else if (method.equals("help")) {
                 // print the command list
